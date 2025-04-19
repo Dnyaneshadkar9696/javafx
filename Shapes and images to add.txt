@@ -130,6 +130,7 @@ public class hellofx extends Application {
         root.getChildren().add(triangle);
         root.getChildren().add(circle);
         root.getChildren().add(immage);
+        // Above are the children nodes of the main Group root nodes.
 
 
 
