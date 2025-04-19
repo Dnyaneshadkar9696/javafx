@@ -1,0 +1,38 @@
+  public void start(Stage primarystage) throws Exception {
+
+        // we can create new stage like
+//        Stage nameofstage = new Stage();
+
+        // now the stage is created lets add the scene so that the white screen remains intact.
+
+        Group root = new Group();
+        Scene scene = new Scene(root,600,600,Color.PINK);
+        // you can pass the size to the scene
+
+        // next thing we here is the icon left upper side
+        Image icon = new Image("myphoto.jpg");
+        primarystage.getIcons().add(icon);
+        //we use here get as we are getting the image from the src folder frist storing in icon and then calling at the stage and get printed.
+
+        //now lets set the width , height and the resice and fullscreen
+//        primarystage.setWidth(500);
+//        primarystage.setHeight(500);
+        primarystage.setResizable(false);
+//        primarystage.setFullScreen(true);
+//        primarystage.setX(50);
+//        primarystage.setY(50);
+
+        //give another message to exit the fullscreen
+//        primarystage.setFullScreenExitHint("you cant escape unless you press u");
+//        primarystage.setFullScreenExitKeyCombination(KeyCombination.valueOf("u"));
+
+        // lets set title to the stage
+        primarystage.setTitle("HEY JAVAFX");
+
+        // to show the stage
+        primarystage.setScene(scene);
+        primarystage.show();
+
+
+    }
+}

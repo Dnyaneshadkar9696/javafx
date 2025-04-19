@@ -1,0 +1,145 @@
+package org.example.javafx01;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.Group;
+
+//import javafx.fxml.FXMLLoader;
+//import javafx.scene.Scene;
+//import javafx.stage.Stage;
+//
+//import java.io.IOException;
+
+public class hellofx extends Application {
+
+    // The applicaton class is the parent class and the hellowfx is a child class
+
+    public static void main(String[] args) {
+        launch(args);
+        //launch its an static method in application we can also write is as Applicaton.launch(args) here args are the arguments in the string format. then it automatically call the start method.
+        // as we call the start method the stage is created and we can create another stages  in the  start method.
+
+
+
+
+
+    }
+    // start is an abstract method of application class , so we call the method in main by using word launch;
+
+
+
+    @Override
+    public void start(Stage primarystage) throws Exception {
+
+        Group root = new Group();
+        Scene scene = new Scene(root,600,600,Color.PINK);
+
+        // next thing we here is the icon left upper side
+        Image icon = new Image("myphoto.jpg");
+        primarystage.getIcons().add(icon);
+
+        // now we want to add text on the scene
+        // create the object for the text
+
+        Text text = new Text();
+        // its a node no need to add on the primarystage so root node is already is at the stage so we have to pass to the root node it will aumatically get passed to the root node
+        text.setText("HEEEY THANOX COME FIGHT ME");
+        text.setX(50);
+        text.setY(50);
+        text.setFont(Font.font("Verdana",20));
+        // now the text colot
+        text.setFill(Color.BLACK);
+
+//        now we have to pass the node text to the root node in the form of children which we already passed to the scene
+
+        // lets create the line constructor and call it it dont require to create an object to call an constructor.
+        // lets create the line node
+        Line tore = new Line();
+        tore.setStartX(400);
+        tore.setStartY(200);
+        tore.setEndX(200);
+        tore.setEndY(200);
+        tore.setStrokeWidth(10);
+        tore.setStroke(Color.BLACK);
+        // make line transperant and rotate
+        tore.setOpacity(0.5);
+        tore.setRotate(0);
+        // tore. has lots of properties please see theough and explore
+
+
+        //now its rectangle
+        Rectangle rectangle = new Rectangle(100,80,100,100);
+        // its in the format of x axis y axis and weidth and height.
+        rectangle.setFill(Color.BLUE);
+        rectangle.setStroke(Color.BLACK);
+        rectangle.setStrokeWidth(5);
+
+        // for Triangles we use Polygoans
+        Polygon triangle = new Polygon();
+        triangle.getPoints().setAll(
+                300.0,300.0,
+                400.0,300.0,
+                300.0,200.0
+                // we write here the circles
+        );
+        triangle.setFill(Color.AQUAMARINE);
+
+        // now lets see to add the circle
+        Circle circle = new Circle();
+        circle.setCenterX(350);
+        circle.setCenterY(350);
+        circle.setRadius(50);
+        circle.setFill(Color.ORANGE);
+
+        // now lets see how to add an image to the window
+        Image image = new Image("meoo.jpg");
+        //stoted the image into images
+        //store it in node
+        ImageView immage = new ImageView(image);
+        immage.setX(0);
+        immage.setY(200);
+        immage.setFitWidth(200);
+        immage.setFitHeight(400);
+
+
+
+
+
+
+
+
+        primarystage.setResizable(false);
+
+        primarystage.setTitle("HEY JAVAFX");
+
+
+        root.getChildren().add(text);
+        root.getChildren().add(tore);
+        root.getChildren().add(rectangle);
+        root.getChildren().add(triangle);
+        root.getChildren().add(circle);
+        root.getChildren().add(immage);
+
+
+
+
+        // for node we use get and also for images.
+
+        // to show the stage
+        primarystage.setScene(scene);
+        primarystage.show();
+
+
+    }
+}
