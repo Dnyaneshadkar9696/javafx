@@ -1,0 +1,30 @@
+package org.example.javafx01;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class hellofx extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // Load the FXML file
+        Parent root = FXMLLoader.load(getClass().getResource("/hello-view.fxml"));
+
+
+        // Create the scene with the FXML content
+        Scene scene = new Scene(root,500,500);
+        // 500 is the height and the width.
+
+        // Set up the stage
+        primaryStage.setTitle("JavaFX FXML Example");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
